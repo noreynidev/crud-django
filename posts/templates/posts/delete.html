@@ -1,0 +1,13 @@
+{% extends "./partials/base.html" %}
+{% block content %}
+  <h1>suppimer un article </h1>
+  <p>voullez vous supprimer cette article <strong>{{post.title}}</strong>  
+    <div class="row">
+      <form class="col-3" action="{% url 'posts:delete' post.id %}" method="post">
+        {% csrf_token %}
+        <input class="btn btn-lg btn-danger " type="submit" value="Oui"> 
+      </form> 
+      <a class="btn btn-lg btn-warning " href="{% url 'posts:details' post.id %}">Non</a>
+    </div>
+  </p>
+{% endblock content %}

@@ -1,0 +1,19 @@
+<nav  class="navbar navbar-expand-lg  navbar-light bg-dark ">
+    <a class="navbar-brand " id='navbar-brand' href="{% url 'posts:index' %}">Simple CRUD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuTogle" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon bg-primary"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuTogle">
+        <ul class="navbar-nav mr-auto ">
+            <li class="nav-item {% if request.path == '/'  %} active {% endif %}">
+                <a class="nav-link " href="{% url 'posts:index' %}">Accueil</a>
+            </li>
+            <li class="nav-item{% if 'listings' in request.path %} active {% endif %} ">
+                <a class="nav-link " href="{% url 'posts:listings' %}" >Liste des Articles</a>
+            </li>
+            <li class="nav-item{% if 'create' in request.path %} active {% endif %} ">
+                <a class="nav-link " href="{% url 'posts:create' %}" >Publier un article</a>
+            </li>
+        </ul>
+    </div>
+</nav>

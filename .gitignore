@@ -1,0 +1,7 @@
+*.pyc
+venv
+simpleCrud/__pycache__
+posts/__pycache__/
+posts/migrations/__pycache__/
+media
+static

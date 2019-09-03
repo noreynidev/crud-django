@@ -1,0 +1,16 @@
+{% extends "./partials/base.html" %}
+{% block content %}
+  <h1>Page d'accueil</h1>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt quasi culpa natus rem incidunt dolorum odio. Quis voluptate porro doloribus veritatis quam illum sed saepe culpa eligendi, ab, ducimus in?</p>
+  
+  <div class="row mt-4">
+   {% for post in posts %}
+      <div class="col-sm-3">
+        <p><a href="{% url 'posts:details' post.id %}"><img src="{{post.image.url}}" alt="{{post.image}}" class="img rounded-circle" width="180" height="180"></a>  </p>
+        <h3>{{post.title}}</h3>
+        <p>{{post.content|truncatewords:10}} ...</p>
+      </div>
+  {% endfor %}
+  </div>
+  <p><a class="btn  btn-dark" href="{% url 'posts:listings' %}">Plus d'articles &raquo;</a></p>
+{% endblock content %}

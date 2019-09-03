@@ -1,0 +1,15 @@
+{% extends "./partials/base.html" %}
+{% block content %}
+  <h1>Publier un article</h1>
+  <div class="container">
+    <div class="row">
+      <div class="mr-auto">
+        <form  action="{% url 'posts:create' %}" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+          {{form.as_p}} 
+        <input type="submit" value="publier" class="btn btn-success">
+      </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

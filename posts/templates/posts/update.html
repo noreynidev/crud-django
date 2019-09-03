@@ -1,0 +1,11 @@
+{% extends "./partials/base.html" %}
+{% block content %}
+  <h1>modifier un article</h1>
+  <div class="row">
+    <form class="form-group " action="{% url 'posts:update' post.id %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="modifier" class="btn btn-success">
+    </form>
+  </div>
+{% endblock content %}
